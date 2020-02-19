@@ -1,14 +1,19 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, inject } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterModule } from '@angular/router';
+import { HEROES } from '../mocks/mock-heroes';
 
 import { DashboardComponent } from './dashboard.component';
+import { HeroService } from '../service/hero.service';
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
   let fixture: ComponentFixture<DashboardComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(async(() => {    
     TestBed.configureTestingModule({
-      declarations: [ DashboardComponent ]
+      imports: [RouterModule.forRoot([]),HttpClientTestingModule],
+      declarations: [ DashboardComponent ],
     })
     .compileComponents();
   }));
@@ -26,15 +31,5 @@ describe('DashboardComponent', () => {
   it('should have an array of Heroes', () => {
     component.getHeroes();
     expect(component.heroes).toBeInstanceOf(Array);
-  });
-
-  it('should have an length of 4', () => {
-    component.getHeroes();
-    expect(component.heroes.length).toEqual(4);
-  });
-
-  it('should have an name property of type String', () => {
-    component.getHeroes();
-    expect(component.heroes[3].name).toBeInstanceOf(String);
   });
 });

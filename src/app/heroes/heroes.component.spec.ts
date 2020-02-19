@@ -1,4 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterModule } from '@angular/router';
 
 import { HeroesComponent } from './heroes.component';
 import { Hero } from '../service/hero';
@@ -9,6 +11,7 @@ describe('HeroesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [RouterModule.forRoot([]),HttpClientTestingModule],
       declarations: [ HeroesComponent ]
     })
     .compileComponents();
@@ -38,29 +41,6 @@ describe('HeroesComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('ul')).toBeTruthy();
   }));
-
-  // it('should call onSelect function', async(() => {
-  //   spyOn(component, 'onSelect');
-  
-  //   let button = fixture.debugElement.nativeElement.querySelector('li');
-  //   button.click();
-  
-  //   fixture.whenStable().then(() => {
-  //     expect(component.onSelect).toHaveBeenCalled();
-  //   });
-  // }));
-
-  // it('should render app-hero-detail tag', async(() => {
-  //   const fixture = TestBed.createComponent(HeroesComponent);
-  //   fixture.detectChanges();
-  //   const compiled = fixture.debugElement.nativeElement;
-  //   expect(compiled.querySelector('app-hero-detail ')).toBeTruthy();
-  // }));
-
-  // it('should select a hero', () => {
-  //   component.onSelect({id:666,name: 'Gandalf'})
-  //   expect(component.selectedHero.name).toEqual('Gandalf');
-  // });
 
   it('should create', () => {
     expect(component).toBeTruthy();

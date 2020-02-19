@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: 'AIzaSyAwHXb7G8JfI4WIvpDRbfbRqoHWwby41NQ',
+    apiKey: '',
     authDomain: 'tour-of-heroes-angular.firebaseapp.com',
     databaseURL: 'https://tour-of-heroes-angular.firebaseio.com',
     projectId: 'tour-of-heroes-angular',

@@ -10,7 +10,7 @@ export const environment = {
     databaseURL: 'https://tour-of-heroes-angular.firebaseio.com',
     projectId: 'tour-of-heroes-angular',
     storageBucket: '',
-    messagingSenderId: '508149097735'
+    messagingSenderId: ''
   }
 };
 
